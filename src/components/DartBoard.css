@@ -1,0 +1,19 @@
+.dartboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.dartboard-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dartboard-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

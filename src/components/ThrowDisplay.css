@@ -1,0 +1,101 @@
+.throw-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.throw-slots {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.throw-slot {
+  flex: 1;
+  max-width: 110px;
+  background: #2a2a3e;
+  border: 2px solid #444;
+  border-radius: 10px;
+  padding: 10px 8px 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+
+.throw-slot:hover {
+  border-color: #888;
+}
+
+.throw-slot.selected {
+  border-color: #4a9eff;
+  background: #1a2a4e;
+  box-shadow: 0 0 10px rgba(74, 158, 255, 0.4);
+}
+
+.throw-slot.has-value {
+  border-color: #5a5a7e;
+}
+
+.throw-label {
+  font-size: 11px;
+  color: #888;
+}
+
+.throw-value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.throw-score {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.slot-delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  color: #ff7777;
+  border: none;
+  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+
+.slot-delete-btn:hover {
+  opacity: 1;
+}
+
+.delete-btn {
+  background: #3a2a2a;
+  color: #ff7777;
+  border: 1px solid #ff5555;
+  border-radius: 8px;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.delete-btn:hover {
+  background: #5a2a2a;
+}

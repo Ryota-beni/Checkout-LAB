@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(mkdir -p \"/Users/ryota/Documents/アプリ開発/ダーツアレンジアプリ/.claude\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(vercel --version)",
+      "Bash(git --version)",
+      "Bash(git config *)"
+    ]
+  }
+}
