@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import DartBoard from './DartBoard';
 import ThrowDisplay from './ThrowDisplay';
-import { ThrowResult, ArrangementCategory } from '../types';
+import { ThrowResult, ArrangementCategory, BullMode } from '../types';
 import { throwsTotal } from '../utils/dartUtils';
 import './CalculatorMode.css';
 
@@ -10,6 +10,7 @@ interface CalculatorModeProps {
 }
 
 export default function CalculatorMode({ onSave }: CalculatorModeProps) {
+  const [bullMode, setBullMode] = useState<BullMode>('fat');
   const [throws, setThrows] = useState<(ThrowResult | null)[]>([null, null, null]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
@@ -50,13 +51,24 @@ export default function CalculatorMode({ onSave }: CalculatorModeProps) {
 
   return (
     <div className="calculator-mode">
-      <div className="calc-total">
-        <span className="calc-total-label">合計</span>
-        <span className="calc-total-value">{total}</span>
-        <span className="calc-total-unit">点</span>
+      <div className="calc-bull-setting">
+        {(['fat', 'separate'] as BullMode[]).map(mode => (
+          <button
+            key={mode}
+            className={`toggle-btn${bullMode === mode ? ' active' : ''}`}
+            onClick={() => { setBullMode(mode); setThrows([null, null, null]); setSelectedIndex(0); }}
+          >
+            {mode === 'fat' ? 'Fat BULL' : 'Separate BULL'}
+          </button>
+        ))}
       </div>
 
-      <DartBoard onThrow={handleThrow} />
+      <div className="calc-total">
+        <span className="calc-total-label">Total</span>
+        <span className="calc-total-value">{total}</span>
+      </div>
+
+      <DartBoard onThrow={handleThrow} bullMode={bullMode} />
 
       <ThrowDisplay
         throws={throws}
@@ -75,15 +87,15 @@ export default function CalculatorMode({ onSave }: CalculatorModeProps) {
       {showSaveDialog && (
         <div className="modal-overlay" onClick={() => setShowSaveDialog(false)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
-            <h3>アレンジ表に保存</h3>
-            <p>どのアレンジ表に保存しますか？</p>
+            <h3>Save to Checkout Chart</h3>
+            <p>Which chart?</p>
             <div className="modal-buttons">
               <button onClick={() => handleSaveWithCategory('open')}>Open Out</button>
               <button onClick={() => handleSaveWithCategory('double')}>Double Out</button>
               <button onClick={() => handleSaveWithCategory('master')}>Master Out</button>
               <button onClick={() => handleSaveWithCategory('double_separate')}>Double Out (Bull Separate)</button>
             </div>
-            <button className="modal-cancel" onClick={() => setShowSaveDialog(false)}>キャンセル</button>
+            <button className="modal-cancel" onClick={() => setShowSaveDialog(false)}>Cancel</button>
           </div>
         </div>
       )}

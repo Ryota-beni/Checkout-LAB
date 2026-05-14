@@ -18,7 +18,7 @@ export default function GameSettings({ settings, onChange }: GameSettingsProps) 
               className={`toggle-btn${settings.bullMode === mode ? ' active' : ''}`}
               onClick={() => onChange({ ...settings, bullMode: mode })}
             >
-              {mode === 'fat' ? 'ファットブル' : 'セパレートブル'}
+              {mode === 'fat' ? 'Fat BULL' : 'Separate BULL'}
             </button>
           ))}
         </div>

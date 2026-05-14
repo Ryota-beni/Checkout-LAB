@@ -22,17 +22,17 @@ function saveEntriesToStorage(entries: ArrangementEntry[]) {
 }
 
 const HOME_ITEMS: { key: AppMode; label: string; sub: string; icon: string }[] = [
-  { key: 'practice',    label: '練習モード',   sub: '好きな点数でアレンジ練習',   icon: '🎯' },
-  { key: 'test',        label: 'テストモード',  sub: '10問ランダム出題',           icon: '📝' },
-  { key: 'calculator',  label: '計算機モード',  sub: '3本の合計を計算',            icon: '🔢' },
-  { key: 'arrangement', label: 'アレンジ表',    sub: '保存したアレンジを確認',     icon: '📋' },
+  { key: 'practice',    label: 'Practice',        sub: 'Practice your checkout',     icon: '🎯' },
+  { key: 'test',        label: 'Test',             sub: '10 random questions',        icon: '📝' },
+  { key: 'calculator',  label: 'Calculator',       sub: 'Calculate 3-dart total',     icon: '🔢' },
+  { key: 'arrangement', label: 'Checkout Chart',   sub: 'View saved arrangements',    icon: '📋' },
 ];
 
 const MODE_LABELS: Record<AppMode, string> = {
-  practice: '練習モード',
-  test: 'テストモード',
-  calculator: '計算機モード',
-  arrangement: 'アレンジ表',
+  practice: 'Practice',
+  test: 'Test',
+  calculator: 'Calculator',
+  arrangement: 'Checkout Chart',
 };
 
 export default function App() {
@@ -74,7 +74,7 @@ export default function App() {
     return (
       <div className="app home-screen">
         <div className="home-header">
-          <h1 className="home-title">🎯 ダーツ アレンジ練習</h1>
+          <h1 className="home-title">🎯 Checkout LAB</h1>
         </div>
         <div className="home-grid">
           {HOME_ITEMS.map(item => (

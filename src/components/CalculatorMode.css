@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+.calc-bull-setting {
+  display: flex;
+  gap: 6px;
+}
+
 .calc-total {
   display: flex;
   align-items: baseline;
