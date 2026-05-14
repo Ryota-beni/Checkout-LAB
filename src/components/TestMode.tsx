@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import DartBoard from './DartBoard';
 import ThrowDisplay from './ThrowDisplay';
 import GameSettings from './GameSettings';
@@ -20,6 +20,22 @@ export default function TestMode() {
 
   const currentScore = questions[questionIndex] ?? 0;
 
+  // 合計がちょうど一致 or 3本全部入った瞬間に自動判定
+  useEffect(() => {
+    if (!gameStarted || answered) return;
+    const total = throwsTotal(throws);
+    const allFilled = throws.every(t => t !== null);
+
+    if (total === currentScore) {
+      const valid = isValidFinish(throws, currentScore, settings.outMode, settings.bullMode);
+      setCorrect(valid);
+      setAnswered(true);
+    } else if (total > currentScore || allFilled) {
+      setCorrect(false);
+      setAnswered(true);
+    }
+  }, [throws, gameStarted, answered, currentScore, settings]);
+
   function startGame() {
     const qs = generateTestQuestions(settings.outMode, settings.bullMode);
     setQuestions(qs);
@@ -37,7 +53,6 @@ export default function TestMode() {
     setThrows(prev => {
       const next = [...prev] as (ThrowResult | null)[];
       next[selectedIndex] = result;
-      // Auto advance selected index
       if (selectedIndex < 2) {
         const nextEmpty = next.slice(selectedIndex + 1).findIndex(t => t === null);
         if (nextEmpty !== -1) setSelectedIndex(selectedIndex + 1 + nextEmpty);
@@ -60,12 +75,6 @@ export default function TestMode() {
       return next;
     });
     setSelectedIndex(index);
-  }
-
-  function handleCheck() {
-    const valid = isValidFinish(throws, currentScore, settings.outMode, settings.bullMode);
-    setCorrect(valid);
-    setAnswered(true);
   }
 
   function handleNext() {
@@ -107,18 +116,13 @@ export default function TestMode() {
             </div>
           ))}
         </div>
-        <button className="start-btn" onClick={() => { setGameStarted(false); }}>
-          もう一度設定から
-        </button>
-        <button className="start-btn secondary" onClick={startGame}>
-          同じ設定で再挑戦
-        </button>
+        <button className="start-btn" onClick={() => setGameStarted(false)}>もう一度設定から</button>
+        <button className="start-btn secondary" onClick={startGame}>同じ設定で再挑戦</button>
       </div>
     );
   }
 
   const total = throwsTotal(throws);
-  const hasThrows = throws.some(t => t !== null);
 
   return (
     <div className="test-mode">
@@ -141,8 +145,9 @@ export default function TestMode() {
           {correct ? '✓ 正解！' : '✗ 不正解'}
           <div className="answer-detail">
             合計: {total}点
-            {!correct && total === currentScore && <span> (アウト条件を満たしていません)</span>}
-            {!correct && total !== currentScore && <span> (合計が合いません)</span>}
+            {!correct && total === currentScore && <span>（アウト条件を満たしていません）</span>}
+            {!correct && total > currentScore && <span>（オーバー）</span>}
+            {!correct && total < currentScore && <span>（合計が足りません）</span>}
           </div>
         </div>
       )}
@@ -157,12 +162,9 @@ export default function TestMode() {
         onDeleteSingle={handleDeleteSingle}
       />
 
-      {!answered && hasThrows && (
-        <button className="check-btn" onClick={handleCheck}>確認</button>
-      )}
       {answered && (
         <button className="next-btn" onClick={handleNext}>
-          {questionIndex + 1 < questions.length ? '次の問題' : '結果を見る'}
+          {questionIndex + 1 < questions.length ? '次の問題 →' : '結果を見る'}
         </button>
       )}
     </div>

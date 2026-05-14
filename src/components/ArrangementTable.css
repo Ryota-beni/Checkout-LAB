@@ -16,40 +16,41 @@
 .cat-tab {
   flex: 1;
   min-width: 80px;
-  background: #2a2a3e;
-  color: #aaa;
-  border: 1px solid #444;
+  background: #080808;
+  color: #333;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  padding: 8px 6px;
+  padding: 9px 6px;
   cursor: pointer;
   font-size: 12px;
   text-align: center;
   white-space: pre-line;
   transition: all 0.15s;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .cat-tab:hover {
-  border-color: #888;
-  color: #fff;
+  border-color: #00e5ff44;
+  color: #888;
 }
 
 .cat-tab.active {
-  background: #4a9eff;
-  color: #fff;
-  border-color: #4a9eff;
+  background: #001a1f;
+  color: #00e5ff;
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff33;
 }
 
 .empty-state {
   text-align: center;
-  padding: 40px 20px;
-  color: #aaa;
+  padding: 50px 20px;
+  color: #222;
 }
 
 .empty-hint {
   font-size: 13px;
-  margin-top: 8px;
-  opacity: 0.7;
+  margin-top: 10px;
+  opacity: 0.6;
 }
 
 .table-wrapper {
@@ -65,46 +66,47 @@
 .arrange-table th {
   text-align: left;
   padding: 10px 12px;
-  color: #aaa;
-  font-size: 12px;
+  color: #222;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid #444;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #111;
 }
 
 .arrange-table td {
   padding: 12px 12px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #0d0d0d;
   color: #fff;
 }
 
 .arrange-table tr:hover td {
-  background: rgba(255,255,255,0.03);
+  background: #080808;
 }
 
 .score-cell {
   font-size: 20px;
   font-weight: bold;
-  color: #4a9eff !important;
+  color: #00e5ff !important;
   min-width: 60px;
+  text-shadow: 0 0 10px #00e5ff55;
 }
 
 .dart-cell {
   font-weight: 600;
   min-width: 55px;
-  color: #eee !important;
+  color: #ccc !important;
 }
 
 .left-cell {
-  color: #ff9944 !important;
+  color: #ff9500 !important;
   font-weight: bold;
   min-width: 40px;
 }
 
 .delete-entry-btn {
   background: transparent;
-  color: #ff5555;
-  border: 1px solid #ff5555;
+  color: #ff2d55;
+  border: 1px solid #ff2d5544;
   border-radius: 4px;
   width: 24px;
   height: 24px;
@@ -114,8 +116,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.15s;
 }
 
 .delete-entry-btn:hover {
-  background: rgba(255,85,85,0.2);
+  border-color: #ff2d55;
+  box-shadow: 0 0 6px #ff2d5544;
 }

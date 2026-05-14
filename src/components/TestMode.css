@@ -8,31 +8,35 @@
 }
 
 .test-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #00e5ff;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .start-btn {
-  background: #4a9eff;
-  color: #fff;
-  border: none;
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid #00e5ff;
   border-radius: 12px;
   padding: 14px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.2s;
+  letter-spacing: 1px;
 }
 
 .start-btn:hover {
-  background: #6ab4ff;
+  box-shadow: 0 0 20px #00e5ff55;
+  background: #001a1f;
 }
 
 .start-btn.secondary {
-  background: #2a4a6a;
-  font-size: 15px;
+  border-color: #00e5ff44;
+  color: #00e5ff88;
+  font-size: 14px;
   padding: 12px;
 }
 
@@ -43,8 +47,8 @@
 }
 
 .question-num {
-  font-size: 14px;
-  color: #aaa;
+  font-size: 13px;
+  color: #333;
 }
 
 .progress-dots {
@@ -56,33 +60,48 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #444;
+  background: #1a1a1a;
+  border: 1px solid #222;
 }
-.dot.current { background: #4a9eff; }
-.dot.correct { background: #4aff4a; }
-.dot.wrong { background: #ff4a4a; }
+.dot.current {
+  background: #00e5ff;
+  box-shadow: 0 0 6px #00e5ff;
+  border-color: #00e5ff;
+}
+.dot.correct {
+  background: #00ff88;
+  box-shadow: 0 0 6px #00ff88;
+  border-color: #00ff88;
+}
+.dot.wrong {
+  background: #ff2d55;
+  box-shadow: 0 0 6px #ff2d55;
+  border-color: #ff2d55;
+}
 
 .question-score {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2a2a3e;
-  border-radius: 12px;
-  padding: 20px;
+  background: #080808;
+  border: 1px solid #ffffff0d;
+  border-radius: 14px;
+  padding: 22px 20px;
 }
 
 .question-label {
-  font-size: 14px;
-  color: #aaa;
+  font-size: 11px;
+  color: #333;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .question-num-big {
-  font-size: 72px;
+  font-size: 80px;
   font-weight: bold;
   color: #fff;
   line-height: 1;
+  text-shadow: 0 0 30px #ffffff22;
 }
 
 .answer-result {
@@ -91,47 +110,46 @@
   font-weight: bold;
   padding: 14px;
   border-radius: 12px;
+  letter-spacing: 1px;
 }
 
 .answer-result.correct {
-  background: rgba(74, 255, 74, 0.1);
-  color: #4aff4a;
-  border: 1px solid #4aff4a;
+  background: #00ff8811;
+  color: #00ff88;
+  border: 1px solid #00ff8866;
+  box-shadow: 0 0 20px #00ff8833;
 }
 
 .answer-result.wrong {
-  background: rgba(255, 74, 74, 0.1);
-  color: #ff4a4a;
-  border: 1px solid #ff4a4a;
+  background: #ff2d5511;
+  color: #ff2d55;
+  border: 1px solid #ff2d5566;
+  box-shadow: 0 0 20px #ff2d5533;
 }
 
 .answer-detail {
   font-size: 13px;
   font-weight: normal;
-  margin-top: 4px;
-  opacity: 0.8;
-}
-
-.check-btn {
-  background: #4a9eff;
-  color: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 14px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
+  margin-top: 6px;
+  opacity: 0.7;
 }
 
 .next-btn {
-  background: #2a6a2a;
-  color: #7eff7e;
-  border: 1px solid #3a9a3a;
+  background: transparent;
+  color: #00ff88;
+  border: 1px solid #00ff8866;
   border-radius: 12px;
   padding: 14px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+
+.next-btn:hover {
+  border-color: #00ff88;
+  box-shadow: 0 0 16px #00ff8844;
 }
 
 .final-score {
@@ -142,14 +160,16 @@
 }
 
 .final-score-num {
-  font-size: 80px;
+  font-size: 90px;
   font-weight: bold;
-  color: #4a9eff;
+  color: #00e5ff;
+  text-shadow: 0 0 30px #00e5ff88;
+  line-height: 1;
 }
 
 .final-score-den {
   font-size: 28px;
-  color: #aaa;
+  color: #333;
 }
 
 .result-list {
@@ -165,11 +185,13 @@
 }
 
 .result-item.correct {
-  background: rgba(74, 255, 74, 0.1);
-  color: #7eff7e;
+  background: #00ff8811;
+  color: #00ff88;
+  border: 1px solid #00ff8822;
 }
 
 .result-item.wrong {
-  background: rgba(255, 74, 74, 0.1);
-  color: #ff7e7e;
+  background: #ff2d5511;
+  color: #ff2d55;
+  border: 1px solid #ff2d5522;
 }

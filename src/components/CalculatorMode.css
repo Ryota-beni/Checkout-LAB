@@ -12,48 +12,51 @@
   align-items: baseline;
   justify-content: center;
   gap: 8px;
-  background: #2a2a3e;
-  border-radius: 12px;
-  padding: 20px;
+  background: #080808;
+  border: 1px solid #ffffff0d;
+  border-radius: 14px;
+  padding: 22px 20px;
 }
 
 .calc-total-label {
-  font-size: 16px;
-  color: #aaa;
+  font-size: 14px;
+  color: #333;
 }
 
 .calc-total-value {
-  font-size: 72px;
+  font-size: 80px;
   font-weight: bold;
   color: #fff;
   line-height: 1;
 }
 
 .calc-total-unit {
-  font-size: 20px;
-  color: #aaa;
+  font-size: 18px;
+  color: #333;
 }
 
 .save-btn-calc {
-  background: #2a6a2a;
-  color: #7eff7e;
-  border: 1px solid #3a9a3a;
+  background: transparent;
+  color: #00ff88;
+  border: 1px solid #00ff8866;
   border-radius: 10px;
-  padding: 12px;
+  padding: 13px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.15s;
+  letter-spacing: 1px;
 }
 
 .save-btn-calc:hover {
-  background: #3a8a3a;
+  border-color: #00ff88;
+  box-shadow: 0 0 16px #00ff8844;
 }
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +64,8 @@
 }
 
 .modal {
-  background: #2a2a3e;
+  background: #0a0a0a;
+  border: 1px solid #00e5ff33;
   border-radius: 16px;
   padding: 24px;
   width: 90%;
@@ -69,6 +73,7 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  box-shadow: 0 0 40px #00e5ff22;
 }
 
 .modal h3 {
@@ -77,8 +82,8 @@
 }
 
 .modal p {
-  font-size: 14px;
-  color: #aaa;
+  font-size: 13px;
+  color: #333;
 }
 
 .modal-buttons {
@@ -88,31 +93,33 @@
 }
 
 .modal-buttons button {
-  background: #1a3a6a;
+  background: #080808;
   color: #fff;
-  border: 1px solid #4a7aff;
+  border: 1px solid #00e5ff33;
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.15s;
 }
 
 .modal-buttons button:hover {
-  background: #2a4a8a;
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff33;
 }
 
 .modal-cancel {
   background: transparent;
-  color: #aaa;
-  border: 1px solid #555;
+  color: #333;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
   padding: 10px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
+  transition: all 0.15s;
 }
 
 .modal-cancel:hover {
-  border-color: #888;
-  color: #fff;
+  border-color: #444;
+  color: #888;
 }
