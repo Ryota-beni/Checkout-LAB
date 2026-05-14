@@ -13,7 +13,7 @@ interface PracticeModeProps {
 export default function PracticeMode({ onSave }: PracticeModeProps) {
   const [targetScore, setTargetScore] = useState<number>(501);
   const [inputValue, setInputValue] = useState<string>('501');
-  const [settings, setSettings] = useState<GameSettingsType>({ bullMode: 'fat', outMode: 'double' });
+  const [settings, setSettings] = useState<GameSettingsType>({ bullMode: 'fat', outMode: 'open' });
   const [throws, setThrows] = useState<(ThrowResult | null)[]>([null, null, null]);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [showSaveDialog, setShowSaveDialog] = useState(false);

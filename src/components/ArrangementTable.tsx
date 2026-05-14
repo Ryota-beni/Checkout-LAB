@@ -15,7 +15,7 @@ const CATEGORIES: { key: ArrangementCategory; label: string }[] = [
 ];
 
 export default function ArrangementTable({ entries, onDelete }: ArrangementTableProps) {
-  const [activeCategory, setActiveCategory] = useState<ArrangementCategory>('double');
+  const [activeCategory, setActiveCategory] = useState<ArrangementCategory>('open');
 
   const filtered = entries
     .filter(e => e.category === activeCategory)

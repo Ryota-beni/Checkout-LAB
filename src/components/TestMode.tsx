@@ -7,7 +7,7 @@ import { throwsTotal, isValidFinish, generateTestQuestions } from '../utils/dart
 import './TestMode.css';
 
 export default function TestMode() {
-  const [settings, setSettings] = useState<GameSettingsType>({ bullMode: 'fat', outMode: 'double' });
+  const [settings, setSettings] = useState<GameSettingsType>({ bullMode: 'fat', outMode: 'open' });
   const [gameStarted, setGameStarted] = useState(false);
   const [questions, setQuestions] = useState<number[]>([]);
   const [questionIndex, setQuestionIndex] = useState(0);
