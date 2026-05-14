@@ -93,9 +93,8 @@ export default function TestMode() {
   if (!gameStarted) {
     return (
       <div className="test-mode">
-        <h2 className="test-title">テストモード</h2>
         <GameSettings settings={settings} onChange={setSettings} />
-        <button className="start-btn" onClick={startGame}>ゲームスタート</button>
+        <button className="start-btn" onClick={startGame}>Start Game</button>
       </div>
     );
   }
@@ -104,7 +103,7 @@ export default function TestMode() {
     const score = results.filter(Boolean).length;
     return (
       <div className="test-mode">
-        <h2 className="test-title">結果</h2>
+        <h2 className="test-title">Results</h2>
         <div className="final-score">
           <span className="final-score-num">{score}</span>
           <span className="final-score-den">/ {results.length}</span>
@@ -112,12 +111,12 @@ export default function TestMode() {
         <div className="result-list">
           {results.map((r, i) => (
             <div key={i} className={`result-item ${r ? 'correct' : 'wrong'}`}>
-              Q{i + 1}: {questions[i]}点 — {r ? '✓ 正解' : '✗ 不正解'}
+              Q{i + 1}: {questions[i]} — {r ? '✓ Correct' : '✗ Wrong'}
             </div>
           ))}
         </div>
-        <button className="start-btn" onClick={() => setGameStarted(false)}>もう一度設定から</button>
-        <button className="start-btn secondary" onClick={startGame}>同じ設定で再挑戦</button>
+        <button className="start-btn" onClick={() => setGameStarted(false)}>Change Settings</button>
+        <button className="start-btn secondary" onClick={startGame}>Try Again</button>
       </div>
     );
   }
@@ -136,18 +135,18 @@ export default function TestMode() {
       </div>
 
       <div className="question-score">
-        <span className="question-label">上がれる？</span>
+        <span className="question-label">Can you finish?</span>
         <span className="question-num-big">{currentScore}</span>
       </div>
 
       {answered && (
         <div className={`answer-result ${correct ? 'correct' : 'wrong'}`}>
-          {correct ? '✓ 正解！' : '✗ 不正解'}
+          {correct ? '✓ Correct!' : '✗ Wrong'}
           <div className="answer-detail">
-            合計: {total}点
-            {!correct && total === currentScore && <span>（アウト条件を満たしていません）</span>}
-            {!correct && total > currentScore && <span>（オーバー）</span>}
-            {!correct && total < currentScore && <span>（合計が足りません）</span>}
+            Total: {total}
+            {!correct && total === currentScore && <span> (out condition not met)</span>}
+            {!correct && total > currentScore && <span> (over)</span>}
+            {!correct && total < currentScore && <span> (not enough)</span>}
           </div>
         </div>
       )}
@@ -164,7 +163,7 @@ export default function TestMode() {
 
       {answered && (
         <button className="next-btn" onClick={handleNext}>
-          {questionIndex + 1 < questions.length ? '次の問題 →' : '結果を見る'}
+          {questionIndex + 1 < questions.length ? 'Next →' : 'See Results'}
         </button>
       )}
     </div>

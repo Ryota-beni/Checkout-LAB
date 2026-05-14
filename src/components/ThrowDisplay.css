@@ -46,7 +46,7 @@
 
 .throw-label {
   font-size: 11px;
-  color: #333;
+  color: #888;
 }
 
 .throw-value {
@@ -57,7 +57,7 @@
 
 .throw-score {
   font-size: 11px;
-  color: #444;
+  color: #777;
 }
 
 .slot-delete-btn {

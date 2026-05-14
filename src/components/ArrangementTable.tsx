@@ -37,8 +37,8 @@ export default function ArrangementTable({ entries, onDelete }: ArrangementTable
 
       {filtered.length === 0 ? (
         <div className="empty-state">
-          <p>まだアレンジが保存されていません</p>
-          <p className="empty-hint">練習モードや計算機モードでSaveボタンを押すと保存されます</p>
+          <p>No arrangements saved yet</p>
+          <p className="empty-hint">Hit Save in Practice or Calculator mode to add one</p>
         </div>
       ) : (
         <div className="table-wrapper">

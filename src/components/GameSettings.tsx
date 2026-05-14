@@ -10,7 +10,7 @@ export default function GameSettings({ settings, onChange }: GameSettingsProps) 
   return (
     <div className="game-settings">
       <div className="settings-group">
-        <label>ブル設定</label>
+        <label>Bull</label>
         <div className="toggle-group">
           {(['fat', 'separate'] as BullMode[]).map(mode => (
             <button
@@ -24,7 +24,7 @@ export default function GameSettings({ settings, onChange }: GameSettingsProps) 
         </div>
       </div>
       <div className="settings-group">
-        <label>アウト設定</label>
+        <label>Out</label>
         <div className="toggle-group">
           {(['open', 'double', 'master'] as OutMode[]).map(mode => (
             <button

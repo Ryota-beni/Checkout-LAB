@@ -25,15 +25,15 @@ export default function ThrowDisplay({ throws, selectedIndex, onSelectIndex, onD
                 onClick={e => { e.stopPropagation(); onDeleteSingle(i); }}
               >×</button>
             )}
-            <span className="throw-label">{i + 1}本目</span>
+            <span className="throw-label">{['1st', '2nd', '3rd'][i]}</span>
             <span className="throw-value">{throws[i]?.display ?? '—'}</span>
             {throws[i] && (
-              <span className="throw-score">{throws[i]!.score}点</span>
+              <span className="throw-score">{throws[i]!.score}</span>
             )}
           </div>
         ))}
       </div>
-      <button className="delete-btn" onClick={onDelete}>全削除</button>
+      <button className="delete-btn" onClick={onDelete}>Delete</button>
     </div>
   );
 }

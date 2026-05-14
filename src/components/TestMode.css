@@ -48,7 +48,7 @@
 
 .question-num {
   font-size: 13px;
-  color: #333;
+  color: #888;
 }
 
 .progress-dots {
@@ -91,7 +91,7 @@
 
 .question-label {
   font-size: 11px;
-  color: #333;
+  color: #888;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -169,7 +169,7 @@
 
 .final-score-den {
   font-size: 28px;
-  color: #333;
+  color: #888;
 }
 
 .result-list {

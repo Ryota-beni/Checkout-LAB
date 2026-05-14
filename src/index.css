@@ -9,8 +9,14 @@ body {
   background: #000;
   color: #fff;
   min-height: 100vh;
+  overscroll-behavior: none;
 }
 
 #root {
   min-height: 100vh;
+}
+
+button, input {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }

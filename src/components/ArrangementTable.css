@@ -17,7 +17,7 @@
   flex: 1;
   min-width: 80px;
   background: #080808;
-  color: #333;
+  color: #777;
   border: 1px solid #1a1a1a;
   border-radius: 8px;
   padding: 9px 6px;
@@ -31,7 +31,7 @@
 
 .cat-tab:hover {
   border-color: #00e5ff44;
-  color: #888;
+  color: #aaa;
 }
 
 .cat-tab.active {
@@ -44,7 +44,7 @@
 .empty-state {
   text-align: center;
   padding: 50px 20px;
-  color: #222;
+  color: #888;
 }
 
 .empty-hint {
@@ -66,7 +66,7 @@
 .arrange-table th {
   text-align: left;
   padding: 10px 12px;
-  color: #222;
+  color: #888;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;

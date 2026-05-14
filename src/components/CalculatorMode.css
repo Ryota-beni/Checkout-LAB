@@ -25,7 +25,7 @@
 
 .calc-total-label {
   font-size: 14px;
-  color: #333;
+  color: #888;
 }
 
 .calc-total-value {
@@ -88,7 +88,7 @@
 
 .modal p {
   font-size: 13px;
-  color: #333;
+  color: #888;
 }
 
 .modal-buttons {
@@ -115,8 +115,8 @@
 
 .modal-cancel {
   background: transparent;
-  color: #333;
-  border: 1px solid #1a1a1a;
+  color: #777;
+  border: 1px solid #2a2a2a;
   border-radius: 8px;
   padding: 10px;
   font-size: 13px;

@@ -80,7 +80,7 @@ export default function PracticeMode({ onSave }: PracticeModeProps) {
             max={501}
             className="score-input"
           />
-          <span className="score-input-label">点から練習</span>
+          <span className="score-input-label">pts — Practice</span>
         </div>
         <GameSettings settings={settings} onChange={setSettings} />
       </div>
@@ -97,7 +97,7 @@ export default function PracticeMode({ onSave }: PracticeModeProps) {
             {remaining < 0 ? 'BUST' : remaining}
           </span>
           {remaining < 0 && (
-            <span className="bust-over">{Math.abs(remaining)}点オーバー</span>
+            <span className="bust-over">{Math.abs(remaining)} over</span>
           )}
         </div>
       </div>
@@ -121,15 +121,15 @@ export default function PracticeMode({ onSave }: PracticeModeProps) {
       {showSaveDialog && (
         <div className="modal-overlay" onClick={() => setShowSaveDialog(false)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
-            <h3>アレンジ表に保存</h3>
-            <p>どのアレンジ表に保存しますか？</p>
+            <h3>Save to Checkout Chart</h3>
+            <p>Which chart?</p>
             <div className="modal-buttons">
               <button onClick={() => handleSaveWithCategory('open')}>Open Out</button>
               <button onClick={() => handleSaveWithCategory('double')}>Double Out</button>
               <button onClick={() => handleSaveWithCategory('master')}>Master Out</button>
               <button onClick={() => handleSaveWithCategory('double_separate')}>Double Out (Bull Separate)</button>
             </div>
-            <button className="modal-cancel" onClick={() => setShowSaveDialog(false)}>キャンセル</button>
+            <button className="modal-cancel" onClick={() => setShowSaveDialog(false)}>Cancel</button>
           </div>
         </div>
       )}

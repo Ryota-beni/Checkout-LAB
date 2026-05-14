@@ -92,7 +92,7 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <button className="back-btn" onClick={() => setMode(null)}>← ホーム</button>
+        <button className="back-btn" onClick={() => setMode(null)}>← Home</button>
         <h1 className="app-title">{MODE_LABELS[mode]}</h1>
       </header>
       <main className="app-main">
